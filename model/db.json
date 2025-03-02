@@ -1,0 +1,54 @@
+[
+  {
+    "id": 2,
+    "name": "Jane Doe",
+    "email": "",
+    "password": "123456"
+  },
+  {
+    "id": 3,
+    "name": "siva",
+    "email": "suava@gamail.com",
+    "password": "123456"
+  },
+  {
+    "id": 4,
+    "name": "siva1",
+    "email": "siva@gamail.com",
+    "password": "123456"
+  },
+  {
+    "id": 5,
+    "name": "siva1balakj",
+    "email": "siv@gmail.com",
+    "password": "$2b$10$pY5URlVUggFLIjUnQ5OXeuxnUx19ZgRrKHjmGGuh4eUACHPaenmi2",
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoic2l2YTFiYWxha2oiLCJpYXQiOjE3NDA4NDk5MjUsImV4cCI6MTc0MDkzNjMyNX0.TOnNLD3oucVx_iwjDiPzL9cB3FeDGgbSAj-OATJAB0w"
+  },
+  {
+    "id": 6,
+    "name": "siva1balakji",
+    "email": "siva12123@gmail.com",
+    "password": "$2b$10$OTYVTSXRDvwvRmpYBjxPXejOtT1S6bvaLX7eXUd1XdDB3qBe8uzGq",
+    "roles": {
+      "user": 2001,
+      "Admin": 5150
+    },
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoic2l2YTFiYWxha2ppIiwiaWF0IjoxNzQwODk0NzIyLCJleHAiOjE3NDA5ODExMjJ9.Sc7bQhzpnaNZ1wbVFfcrJnkC-R3rBbc0-CesD40w_ic"
+  },
+  {
+    "id": 8,
+    "name": "siva121",
+    "email": "siva1212131@gamail.com",
+    "password": "123456"
+  },
+  {
+    "id": 7,
+    "name": "sivabalaji",
+    "email": "sivabalajieevana@gmail.com",
+    "password": "$2b$10$T0L28biIH7c8ujBMQqqjEO36WJGr8uXD5loGdgb8wvu6ZmP.K88eC",
+    "roles": {
+      "admin": 5150
+    },
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoic2l2YWJhbGFqaSIsImlhdCI6MTc0MDg5NTI4OCwiZXhwIjoxNzQwOTgxNjg4fQ.O0T8SSBXXsNyacZdfweiiFDxKWD02h678-4Ub2A3lY4"
+  }
+]
