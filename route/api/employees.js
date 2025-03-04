@@ -1,20 +1,24 @@
 const express=require('express');
 const router=express.Router();
-const fsPromises=require('fs').promises;
-const path=require('path');
+// const fsPromises=require('fs').promises;
+// const path=require('path');
 const Roles_List=require('../../cofig/roles_list');
 const verifyRoles=require('../../middleware/verifyRoles')
 const employeeController=require('../../controller/employeeController');
-const userDB={
-    users:require('../../model/db.json'),
-    setUsers:function(data){this.users=data;}
-}
+// const userDB={
+//     users:require('../../model/db.json'),
+//     setUsers:function(data){this.users=data;}
+// }
+const Employee=require('../../model/Employee')
 router.route('/employees')
 // .get((req,res)=>{
 //     res.json(userDB.users);
 // })
-.get( (req,res) => {
-    res.json(userDB.users)
+.get( async (req,res) => {
+   const Employees=await Employee.find();
+   if(!Employees)
+    return res.status(404).json({msg:"no employees found"});
+   res.json(Employees);
 })
 // .post((req,res)=>{
 //     const{name,password,email}=req.body;
@@ -32,16 +36,16 @@ router.route('/employees')
 //  .catch( err =>res.status(500).json({msg:err.message}));
 // })
 .post(verifyRoles(Roles_List.Admin,Roles_List.Editor),employeeController.createEmployee)
-.put(verifyRoles(Roles_List.Admin,Roles_List.Editor),(req,res)=>{
+.put(verifyRoles(Roles_List.Admin,Roles_List.Editor), async (req,res)=>{
     const { id, name, email, password } = req.body;
         
     if (!id || !name || !email || !password) {
         return res.status(400).json({ msg: "Please include id, name, email, and password" });
     }
 
-    const userIndex = userDB.users.findIndex(user => user.id === parseInt(id));
+    const employee = await Employee.findOne({_id:req.body.id}).exec();
     
-    if (userIndex === -1) {
+    if (!employee) {
         return res.status(404).json({ msg: "User not found" });
     }
 
